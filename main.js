@@ -6,7 +6,7 @@ const app = express();
 
 app.use(express.json());
 
-mongoose.connect('mongodb://127.0.0.1:27017/mydb')
+mongoose.connect('mongodb://mongodb:27017/mydb')
 
 app.post('/users', async (req, res) => {
   const user = await User.create({
