@@ -1,9 +1,23 @@
 const express = require('express');
+const mongoose = require('mongoose');
+const User = require('./models/User');
+
 const app = express();
-const port = 3000;
-app.get('/', (req, res) => {
-  res.send('Hello, World! saikh done ashad');
+
+app.use(express.json());
+
+mongoose.connect('mongodb://localhost:27017/mydb');
+
+app.post('/users', async (req, res) => {
+  const user = await User.create({
+    name: req.body.name,
+    email: req.body.email,
+    age: req.body.age
+  });
+
+  res.json(user);
 });
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+
+app.listen(3000, () => {
+  console.log('Server running on port 3000');
 });

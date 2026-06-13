@@ -3,6 +3,17 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      container_name: node-app
     restart: unless-stopped
     ports:
       - "3000:3000"
+  mongodb:
+    image: mongo:latest
+    Counatiner_name: mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+volumes:
+  mongo-data:
