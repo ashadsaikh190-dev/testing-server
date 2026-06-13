@@ -9,7 +9,7 @@ services:
       - "3000:3000"
   mongodb:
     image: mongo:latest
-    Counatiner_name: mongodb
+    container_name: mongodb
     restart: unless-stopped
     ports:
       - "27017:27017"
