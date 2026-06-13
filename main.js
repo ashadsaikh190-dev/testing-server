@@ -19,7 +19,7 @@ app.post('/users', async (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log('Server running on port 3000 ok');
+  console.log('Server running on port 3000');
 });
 
 mongoose.connection.on('connected', () => {
