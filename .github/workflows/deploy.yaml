@@ -1,18 +1,14 @@
 name: Deploy NodeJs Application
-
 on:
   push:
     branches:
       - main
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4.2.2
-
       - name: Deploy Via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
